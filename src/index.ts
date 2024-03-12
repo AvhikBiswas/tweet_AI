@@ -11,6 +11,7 @@ export const genAI = new GoogleGenerativeAI(process.env.GAMINI_API_KEY!);
 app.use(express.json());
 
 app.get("/api/v1/suggestion", async (req: Request, res: Response) => {
+
   const tweetText: string = req.query.tweetText as string;
 
   console.log("tweetText", tweetText);
