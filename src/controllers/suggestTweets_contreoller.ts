@@ -1,12 +1,12 @@
 import { Request, Response } from "express";
-import { createTweet } from "../services/createTweet";
+import { tweetSuggestion } from "../services/tweetSuggestion";
 
-const createTweet_controller = async (req: Request, res: Response) => {
+const suggestTweets_contreoller = async (req: Request, res: Response) => {
   try {
-    const {topic} = req.body;
-    console.log('topic', topic);
-    const Tweets = await createTweet(topic);
-    
+    const { text } = req.body;
+    console.log("text", text);
+    const Tweets = await tweetSuggestion(text);
+
     res.status(200).json({
       createdTweets: Tweets,
       success: true,
@@ -23,4 +23,4 @@ const createTweet_controller = async (req: Request, res: Response) => {
   }
 };
 
-export default createTweet_controller;
+export default suggestTweets_contreoller;
