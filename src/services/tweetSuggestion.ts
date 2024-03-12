@@ -4,6 +4,7 @@ import { gemini } from "../repository/gemini";
 export const tweetSuggestion = async (tweetText: string) => {
   const Gemini = new gemini();
   const SuggestionPrompt: string = TweetSuggestion(tweetText);
-  return await Gemini.askGemini(SuggestionPrompt);
+  const res= await Gemini.askGemini(SuggestionPrompt);
+  return res;
   
 };
