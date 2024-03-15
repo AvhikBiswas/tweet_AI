@@ -1,12 +1,19 @@
 export function TweetSuggestion(tweetText: string) {
-  const prompt = `This is the user's tweet: "${tweetText}". I want to make a suggestion for a tweet without changing the context and hashtags with correct grammer correct spelling correct punctuation and make adjustment if needed. In response, provide an array of suggested tweets that the user can use in the following format:
+  const prompt = `This is the user's tweet: "${tweetText}".
 
-    Suggested Tweets:
-    -> Provide tweet suggestions with numbered increments.
-    Spelling Correct:
-    -> Provide original tweet with correct grammer and arrengment and spelling.`;
-    
-    
+  Please generate the following responses in JSON format:
+  
+  1. **Suggested Tweets:**
+     - Provide a list of 4 distinct tweet suggestions that maintain the original context and hashtags, but with improved grammar, spelling, punctuation, and phrasing.
+  
+  2. **Grammar Correction:**
+     - Provide the original tweet with only grammatical,punctuation corrections, preserving the original content and structure as much as possible.
+  
+  Arrange the response as a  valid JSON array with the following format:
+     ["Suggestion 1", "Suggestion 2", "Suggestion 3", "Suggestion 4", "Grammar Correction"]
+     dont add " json" template string or somthing like that,first test that this is valid and then give.
+  
+`;
 
   return prompt;
 }

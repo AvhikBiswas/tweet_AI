@@ -5,8 +5,7 @@ const createTweet_controller = async (req: Request, res: Response) => {
   try {
     const {topic} = req.body;
     console.log('topic', topic);
-    const Tweets = await createTweet(topic);
-    
+    const Tweets = await createTweet(topic);    
     res.status(200).json({
       createdTweets: Tweets,
       success: true,

@@ -2,8 +2,12 @@ import { Request, Response } from "express";
 import { tweetSuggestion } from "../services/tweetSuggestion";
 
 const suggestTweets_contreoller = async (req: Request, res: Response) => {
+  console.log("req.body", req.body);
+
   try {
     const { text } = req.body;
+
+    if (!text) throw new Error("Text Cant Be Null");
     console.log("text", text);
     const Tweets = await tweetSuggestion(text);
 
