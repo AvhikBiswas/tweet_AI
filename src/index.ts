@@ -17,7 +17,7 @@ app.use(cors({
 app.use(express.json());
 app.use("/api", apiRoutes);
 
-app.get("/api/v1/suggestion", (req, res) => {
+app.get("/", (req, res) => {
   res.send("hello I'm Here");
 });
 
